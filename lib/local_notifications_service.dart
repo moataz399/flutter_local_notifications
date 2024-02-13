@@ -26,13 +26,15 @@ class LocalNotificationsService {
   }
 
   static void showBasicNotifications() async {
-    NotificationDetails details = const NotificationDetails(
-        android: AndroidNotificationDetails(
-      ' id 1',
-      'basic notifications',
-      importance: Importance.max,
-      priority: Priority.high,
-    ));
+    NotificationDetails details =  NotificationDetails(
+      android: AndroidNotificationDetails(
+        ' id 1',
+        'basic notifications',
+        importance: Importance.max,
+        priority: Priority.high,
+        sound: RawResourceAndroidNotificationSound("sound.wav".split('.').first),
+      ),
+    );
     flutterLocalNotificationsPlugin.show(
         1, "basic Notifications", "basic", details);
   }

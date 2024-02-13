@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             title: const Text("Basic Notifications"),
             trailing: IconButton(
                 onPressed: () {
-                  LocalNotificationsService.cancelNotifications(0);
+                  LocalNotificationsService.cancelNotifications(1);
                 },
                 icon: Icon(
                   Icons.cancel,
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
               title: const Text("Repeated Notifications"),
               trailing: IconButton(
                   onPressed: () {
-                    LocalNotificationsService.cancelNotifications(1);
+                    LocalNotificationsService.cancelNotifications(2);
                   },
                   icon: Icon(
                     Icons.cancel,
@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
             title: const Text("Scheduled Notifications"),
             trailing: IconButton(
                 onPressed: () {
-                  LocalNotificationsService.cancelNotifications(1);
+                  LocalNotificationsService.cancelNotifications(3);
                 },
                 icon: Icon(
                   Icons.cancel,
