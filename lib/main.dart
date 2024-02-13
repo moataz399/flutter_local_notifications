@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
+import 'home_screen.dart';
+import 'local_notifications_service.dart';
+import 'package:timezone/data/latest.dart' as tz;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotificationsService.init();
+  tz.initializeTimeZones();
   runApp(const MyApp());
 }
 
@@ -15,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomeScreen(),
     );
   }
 }
